@@ -1,0 +1,63 @@
+{
+  "name": "datacenter-dashboard",
+  "version": "1.0.0",
+  "description": "I could have called this shitpost dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron .",
+    "export": "npm run make",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoudronViande24/datacenter-dashboard.git"
+  },
+  "author": "GoudronViande24",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GoudronViande24/datacenter-dashboard/issues"
+  },
+  "homepage": "https://github.com/GoudronViande24/datacenter-dashboard#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.67",
+    "@electron-forge/maker-deb": "^6.0.0-beta.67",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.67",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.67",
+    "@electron-forge/maker-zip": "^6.0.0-beta.67",
+    "@types/ping": "^0.4.1",
+    "electron": "^21.0.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "ping": "^0.4.2"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "datacenter_dashboard"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
