@@ -4,7 +4,11 @@ const PING_TARGETS = [
 	{ name: "PC-TOM", target: "localhost" },
 	{ name: "sam", target: "192.168.50.69" },
 	{ name: "royer", target: "192.168.50.96" },
-	{ name: "Artivain", target: "artivain.com" }
+	{ name: "jo", target: "artivain.com" },
+	{ name: "techno", target: "techno.artivain.com" },
+	{ name: "justin", target: "justin.artivain.com" },
+	// { name: "analytics", target: "analytics.artivain.com" },
+	{ name: "tracy", target: "tracy.artivain.com" }
 ]
 
 const pingList = document.getElementById("ping-list");
@@ -30,7 +34,7 @@ async function checkPing() {
 		if (isNaN(latency)) {
 			className = "text-danger";
 			latency = "sus";
-		} else if (latency > 50) {
+		} else if (latency > 200) {
 			className = "text-warning";
 		}
 
